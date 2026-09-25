@@ -1,1 +1,72 @@
-//
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NFC Digital Business Card</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .card {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>NFC Digital Business Card</h1>
+
+        <p>System is working.</p>
+
+        <p>
+            Card Code:
+            <strong id="cardCode">Loading...</strong>
+        </p>
+
+    </div>
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const cardCode = urlParams.get("card");
+
+        if (cardCode) {
+
+            document.getElementById("cardCode").textContent = cardCode;
+
+        } else {
+
+            document.getElementById("cardCode").textContent =
+                "No Card Code";
+
+        }
+
+    </script>
+
+</body>
+</html>
